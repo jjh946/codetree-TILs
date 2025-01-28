@@ -20,10 +20,13 @@ int main() {
     }
     int i = 2;
     int tmp = big;
+    
     while( tmp%small != 0 ){
-        tmp = tmp*i;
+        tmp = big*i;
+        //cout << tmp << ' ';
         i++;
     }
+    //cout << endl;
     cout << tmp;
     
 
