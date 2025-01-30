@@ -18,7 +18,7 @@ int main() {
     // Write your code here!
     int sum = 0;
     for( int i=a;i<b+1;i++){
-        if (IsPrime(i)){
+        if (i!=1 &&IsPrime(i)){
             sum += i;
         }
     }
