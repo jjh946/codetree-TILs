@@ -1,16 +1,22 @@
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
-// 거듭제곱을 계산하고 출력하는 함수
-void printPower(int a, int b) {
-    cout << pow(a, b) << endl;
+// a^b의 값을 반환합니다.
+int Power(int a, int b) {
+    int cnt = 1;
+    for(int i = 1; i <= b; i++)
+        cnt *= a;
+
+    return cnt;
 }
 
 int main() {
+    // 변수 선언 및 입력:
     int a, b;
-    cin >> a >> b; // 두 정수 입력 받기
-    printPower(a, b); // 함수 호출하여 결과 출력
+    cin >> a >> b;
+
+    cout << Power(a, b);
+    
     return 0;
 }
