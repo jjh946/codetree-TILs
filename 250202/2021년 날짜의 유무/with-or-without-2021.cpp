@@ -12,7 +12,7 @@ bool IsDateExist (int m, int d){
             if (d>28) return false;
             else return true;
         } 
-        if (m==4 || m==6 || m==8 || m==9 || m==11) {
+        if (m==4 || m==6 || m==9 || m==11) {
             if (d>30) return false;
             else return true;
         }
