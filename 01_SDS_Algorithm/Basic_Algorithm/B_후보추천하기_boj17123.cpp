@@ -65,25 +65,4 @@ int main() {
 			}
 		}
 
-		if(!isEmpty && !isDup){ //비어있는 사진 틀이 없고 중복이 되ㄴ지 않는 경우 
-			int index = WhoIsSmallest(n,cnt,Time);
-			photo[index] = sug_id;
-			cnt[index] = 1;
-			Time[index] = i;
-		}
-	}
-	
-	sort(photo,photo+n);
-	
-	for(int i=0;i<n;i++){
-		if(photo[i]>0 && photo[i]<101){
-			cout << photo[i] << ' ';
-		}
-	}
-	cout << endl; //쓰레기 값이 뜨는게 혹시 모르니 개행 추가
-	//개행 없어도 고쳐지긴 했다.
-	
-
-
-	return 0;
-}
+		if(!isEmpty && !isDup){ //비어있는 사진 틀이 없고 중복이 되ㄴ
