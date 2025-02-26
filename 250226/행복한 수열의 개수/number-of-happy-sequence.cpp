@@ -3,7 +3,7 @@
 using namespace std;
 
 int n, m, ans;
-int grid[101][101];
+int grid[106][106];
 
 int main() {
     cin >> n >> m;
