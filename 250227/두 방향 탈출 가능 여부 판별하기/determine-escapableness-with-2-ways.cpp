@@ -3,8 +3,8 @@
 using namespace std;
 
 int n, m;
-int grid[100][100];
-bool visited[100][100];
+int grid[103][103];
+bool visited[103][103];
 //int answer[100][100];
 int order;
 
