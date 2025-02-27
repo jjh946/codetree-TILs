@@ -37,10 +37,7 @@ int main() {
     visited[0][0] = true;
     dfs(0,0);
 
-    if(visited[n-1][m-1]){
-        cout << 1 << endl;
-    }
-    else cout << 0 << endl;
+    cout << (visited[n-1][m-1] ? 1:0) << endl;
 
     return 0;
 }
