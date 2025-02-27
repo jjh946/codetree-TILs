@@ -5,7 +5,7 @@ using namespace std;
 int n, m;
 int grid[100][100];
 bool visited[100][100];
-int answer[100][100];
+//int answer[100][100];
 int order;
 
 void dfs(int x, int y){
@@ -16,7 +16,7 @@ void dfs(int x, int y){
         int next_x = x + dx[i];
         int next_y = y + dy[i];
         if(grid[next_x][next_y]) {
-            answer[next_x][next_y] = order++;
+            //answer[next_x][next_y] = order++;
             visited[next_x][next_y] = true;
             dfs(next_x, next_y);
         }
@@ -33,7 +33,7 @@ int main() {
     }
 
     // Please write your code here.
-    answer[0][0] = order++;
+    //answer[0][0] = order++;
     visited[0][0] = true;
     dfs(0,0);
 
