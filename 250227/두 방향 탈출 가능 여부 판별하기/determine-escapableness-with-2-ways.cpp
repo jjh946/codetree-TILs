@@ -15,7 +15,7 @@ void dfs(int x, int y){
     for(int i=0;i<2;i++){
         int next_x = x + dx[i];
         int next_y = y + dy[i];
-        if(grid[next_x][next_y]) {
+        if(next_x < n && next_y < m && grid[next_x][next_y] && !visited[next_x][next_y]) {
             //answer[next_x][next_y] = order++;
             visited[next_x][next_y] = true;
             dfs(next_x, next_y);
