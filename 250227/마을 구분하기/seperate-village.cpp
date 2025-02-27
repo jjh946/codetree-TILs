@@ -4,8 +4,8 @@
 using namespace std;
 
 int n;
-int grid[25][25];
-bool visited[25][25];
+int grid[27][27];
+bool visited[27][27];
 vector<int> nums;
 int cnt , num;
 
