@@ -19,9 +19,12 @@ void dfs(int x, int y){
         int next_x = x + dx[i];
         int next_y = y + dy[i];
 
-        if(next_x < n && next_y < n && grid[next_x][next_y] && !visited[next_x][next_y]){
-            visited[next_x][next_y] = true;
-            dfs(next_x,next_y);
+        if(next_x < n && next_y < n && next_x >= 0 && next_y >= 0){
+            if(grid[next_x][next_y] && !visited[next_x][next_y]){
+                visited[next_x][next_y] = true;
+                dfs(next_x,next_y);
+            }
+
         }
     }
 
@@ -43,9 +46,9 @@ int main() {
         for (int j = 0; j < n; j++) {
             if(!visited[i][j] && grid[i][j]){
                 visited[i][j] = true;
+                num = 0;
                 dfs(i,j);
                 nums.push_back(num);
-                num = 0;
                 cnt++;
             }
         }
