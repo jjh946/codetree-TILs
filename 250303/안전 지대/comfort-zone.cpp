@@ -9,6 +9,7 @@ bool visited[51][51];
 
 
 void dfs(int x, int y) {
+    visited[x][y] = true;
     
     int dx[4] = {1,-1,0,0};
     int dy[4] = {0,0,1,-1};
@@ -19,7 +20,7 @@ void dfs(int x, int y) {
         
         if(next_x >= 0 && next_y >= 0 && next_x < N && next_y < M){
             if(grid[next_x][next_y]>k && !visited[next_x][next_y]){
-                visited[next_x][next_y] = true;
+                
                 dfs(next_x, next_y);
             }
         }
