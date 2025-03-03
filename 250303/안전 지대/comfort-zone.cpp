@@ -45,7 +45,7 @@ int main() {
         }
     }
 
-    int K=0, mx=0;
+    int K=1, mx=0;
     for (k = 1; k <= max_height; k++) { 
         //dfs를 반복해서 개수를 카운트 하면서 visited를 찍어줌.
         int cnt=0;
