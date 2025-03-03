@@ -38,8 +38,15 @@ int main() {
     }
 
     //그냥 높이만큼 돌다가 탈출해야지
+    int max_height = 0;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            max_height = max(max_height, grid[i][j]);  // 가장 높은 집 찾기
+        }
+    }
+
     int K=0, mx=0;
-    for  (k=1;k<=100;k++){
+    for (k = 1; k <= max_height; k++) { 
         //dfs를 반복해서 개수를 카운트 하면서 visited를 찍어줌.
         int cnt=0;
         memset(visited, false, sizeof(visited));
