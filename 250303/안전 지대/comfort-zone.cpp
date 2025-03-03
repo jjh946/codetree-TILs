@@ -10,7 +10,7 @@ bool visited[51][51];
 
 void dfs(int x, int y) {
     visited[x][y] = true;
-    
+
     int dx[4] = {1,-1,0,0};
     int dy[4] = {0,0,1,-1};
 
@@ -37,9 +37,6 @@ int main() {
         }
     }
 
-    // Please write your code here.
-
-
     //그냥 높이만큼 돌다가 탈출해야지
     int K=0, mx=0;
     for  (k=1;k<=100;k++){
@@ -50,7 +47,7 @@ int main() {
             for (int j = 0; j < M; j++) {
                 if(grid[i][j]>k && !visited[i][j]){
                     cnt++;
-                    visited[i][j] = true;
+                
                     dfs(i,j);
                 }
             }
