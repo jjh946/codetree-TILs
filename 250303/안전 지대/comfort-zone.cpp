@@ -54,7 +54,7 @@ int main() {
                 }
             }
         }
-        if (cnt == 0) break;
+        //if (cnt == 0) break;
         if(cnt > mx){
             mx = cnt;
             K = k;
