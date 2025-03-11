@@ -9,6 +9,9 @@ int visited[100][100];
 int area_cnt, block_cnt, mx;
 
 void dfs(int x, int y){
+    visited[x][y] = true;
+    area_cnt++;
+
     int dx[4] = {1,-1,0,0};
     int dy[4] = {0,0,1,-1};
 
@@ -19,8 +22,6 @@ void dfs(int x, int y){
         if(next_x >= 0 && next_y >=0 && next_x < n && next_y < n){
             //현재위치와 다음 위치의 숫자가 같다면
             if(grid[next_x][next_y]==grid[x][y] && (!visited[next_x][next_y])){
-                visited[next_x][next_y] = true;
-                area_cnt++;
                 dfs(next_x,next_y);
             }
         }
@@ -43,11 +44,12 @@ int main() {
             
             if(!visited[i][j]){
                 area_cnt = 0;
+                //visited[i][j] = true;
                 dfs(i,j);
                 if(area_cnt>=4){
                     block_cnt++;
                 }
-                
+
                 if(area_cnt > mx){
                     mx = area_cnt;
                 }
