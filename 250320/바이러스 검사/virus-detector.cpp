@@ -7,7 +7,13 @@ int ldr, mbr;
 int need;
 
 int main() {
-    // Please write your code here.
+    // cin / cout은 scanf / printf에 비해 속도가 느리므로, 
+    // 입력받아야 할 개수가 많은 경우 다음 코드를 작성해줘야 합니다.
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL); cout.tie(NULL);
+
+
+
     cin >> n;
     for(int i=1;i<=n;i++) cin >> rest[i];
     cin >> ldr >> mbr;
