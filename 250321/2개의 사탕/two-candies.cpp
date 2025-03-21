@@ -174,36 +174,4 @@ int main() {
 }
 
 
-    // incline_box(3);
-
-    // for(int i=0;i<n;i++){
-    //     for(int j=0;j<m;j++){
-    //         cout << grid[i][j];
-    //     }
-    //     cout << '\n';
-    // }
-    // cout << '\n';
-
-
-
-    // incline_box(1);
-    
-    // for(int i=0;i<n;i++){
-    //     for(int j=0;j<m;j++){
-    //         cout << grid[i][j];
-    //     }
-    //     cout << '\n';
-    // }
-    // cout << '\n';
-    
-    // incline_box(2);
-    
-    // for(int i=0;i<n;i++){
-    //     for(int j=0;j<m;j++){
-    //         cout << grid[i][j];
-    //     }
-    //     cout << '\n';
-    // }
-    // cout << '\n';
-
-    // cout << r_out << '\n' << b_out;
+ 
