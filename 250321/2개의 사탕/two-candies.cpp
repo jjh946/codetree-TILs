@@ -95,8 +95,8 @@ void incline_box(int k){
     }
     else if(k==3){
         if(ry>=by){
-            move_candy('B',bx,by,k);
             move_candy('R',rx,ry,k);
+            move_candy('B',bx,by,k);
         }
         else{
             move_candy('B',bx,by,k);
