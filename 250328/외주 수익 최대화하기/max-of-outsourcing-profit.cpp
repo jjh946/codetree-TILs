@@ -9,16 +9,17 @@ int mx;
 int sum;
 
 void backtrack(int start) {
-    sum += sidejob[start][1];
+    
     if(start >= n-1) {
         mx = max(mx, sum);
-        sum -= sidejob[start][1];
         return;
     }
     
 
     for(int i=start;i<n;i++){
+        sum += sidejob[i + sidejob[i][0]][1];
         backtrack(i + sidejob[i][0]);
+        sum -= sidejob[i + sidejob[i][0]][1];
     }
 }
 
@@ -28,7 +29,7 @@ int main() {
         cin >> sidejob[i][0] >> sidejob[i][1];
     }
     for(int i=0;i<n;i++){
-        sum = 0;
+        sum = sidejob[i][1];
         backtrack(i);
     }
     
