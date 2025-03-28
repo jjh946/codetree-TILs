@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
 using namespace std;
 
@@ -17,9 +16,17 @@ void backtrack(int start) {
     
 
     for(int i=start;i<n;i++){
-        sum += sidejob[i + sidejob[i][0]][1];
-        backtrack(i + sidejob[i][0]);
-        sum -= sidejob[i + sidejob[i][0]][1];
+        int t = sidejob[i][0];
+        int p = sidejob[i][1];
+
+        if (i+t <= n){ // 외주 가능 조건 체크
+            sum += p;
+            backtrack(i+t);
+            sum -= p;
+        }
+        else{ // 외주 불가능하무로 다음 날로 넘김
+            backtrack(i+1);
+        }
     }
 }
 
