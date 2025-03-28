@@ -1,46 +1,35 @@
 #include <iostream>
+#include <vector>
 #include <algorithm>
 using namespace std;
 
 int n;
-int sidejob[16][2];
-int mx;
-int sum;
-
-void backtrack(int start) {
-    
-    if(start >= n-1) {
-        mx = max(mx, sum);
-        return;
-    }
-    
-
-    for(int i=start;i<n;i++){
-        int t = sidejob[i][0];
-        int p = sidejob[i][1];
-
-        if (i+t <= n){ // 외주 가능 조건 체크
-            sum += p;
-            backtrack(i+t);
-            sum -= p;
-        }
-        else{ // 외주 불가능하무로 다음 날로 넘김
-            backtrack(i+1);
-        }
-    }
-}
+int dp[16];
 
 int main() {
     cin >> n;
-    for(int i=0;i<n;i++){
-        cin >> sidejob[i][0] >> sidejob[i][1];
-    }
-    for(int i=0;i<n;i++){
-        sum = sidejob[i][1];
-        backtrack(i);
+    vector<pair<int, int>> jobs(n);
+    
+    for(int i = 0; i < n; i++) {
+        cin >> jobs[i].first >> jobs[i].second;
     }
     
-    cout << mx << '\n';
+    // Bottom-up dynamic programming
+    for(int i = n-1; i >= 0; i--) {
+        int next_day = i + jobs[i].first;
+        
+        // Can complete this job
+        if(next_day <= n) {
+            dp[i] = max(jobs[i].second + (next_day < n ? dp[next_day] : 0), 
+                        (i+1 < n ? dp[i+1] : 0));
+        }
+        // Cannot complete this job
+        else {
+            dp[i] = (i+1 < n ? dp[i+1] : 0);
+        }
+    }
+    
+    cout << dp[0] << '\n';
 
     return 0;
 }
