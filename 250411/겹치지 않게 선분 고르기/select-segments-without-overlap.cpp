@@ -30,7 +30,12 @@ void backtrack(int start, int cnt) {
 
 
     for(int s=start+1;s<lines.size();s++){
+        pair<int,int> next_line = lines[s];
+        
         backtrack(s, cnt+1);
+        for(int i=next_line.first;i<=next_line.second;i++){
+            if(visited[i]) return;
+        }
     }
 
 }
@@ -52,6 +57,7 @@ int main() {
     for(int i=0;i<lines.size();i++){
         for(int j=0;j<1000;j++) visited[j]=false;
         backtrack(i,1);
+        
     }
 
     cout << mx << '\n';
