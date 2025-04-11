@@ -50,6 +50,7 @@ int main() {
     //     cout << p.first << ' ' << p.second << endl;
     // }
     for(int i=0;i<lines.size();i++){
+        for(int j=0;j<1000;j++) visited[j]=false;
         backtrack(i,1);
     }
 
