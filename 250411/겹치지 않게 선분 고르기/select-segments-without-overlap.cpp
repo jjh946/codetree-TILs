@@ -49,8 +49,9 @@ int main() {
     // for(auto p: lines){
     //     cout << p.first << ' ' << p.second << endl;
     // }
-
-    backtrack(0,1);
+    for(int i=0;i<lines.size();i++){
+        backtrack(i,1);
+    }
 
     cout << mx << '\n';
 
