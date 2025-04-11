@@ -10,7 +10,6 @@ bool visited[1000];
 int mx;
 
 
-
 bool cmp(const pair<int,int>& a,const pair<int,int>& b){
     if (a.first==b.first)
         return a.second < b.second;
@@ -20,17 +19,14 @@ bool cmp(const pair<int,int>& a,const pair<int,int>& b){
 
 void backtrack(int start, int cnt) {
 
-   
-
     pair<int,int> cur_line = lines[start];
-    for(int i=cur_line.first;i<cur_line.second;i++){
+    for(int i=cur_line.first;i<=cur_line.second;i++){
         if(visited[i]) return;
     }
-    for(int i=cur_line.first;i<cur_line.second;i++){
+    for(int i=cur_line.first;i<=cur_line.second;i++){
         visited[i] = true;
         mx = max(mx, cnt);
     }
-
 
 
     for(int s=start+1;s<lines.size();s++){
