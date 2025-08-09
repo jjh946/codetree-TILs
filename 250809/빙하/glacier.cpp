@@ -3,12 +3,13 @@
 #include <queue>
 #include <algorithm>
 using namespace std;
-#define MAX_TIME 1000
+#define MAX_TIME 100
+#define DEBUG_TIME 2000
 
 int N, M;
 int grid[200][200];
-bool visited[100][100];
-bool isMelted[100][100];
+bool visited[200][200];
+bool isMelted[200][200];
  
 queue<pair<int,int>> q;
 queue<pair<int,int>> toMelt;
@@ -90,18 +91,17 @@ int main() {
             cout << time << ' ' << lastMeltedCnt;
             return 0;
         }
-        //cout << "Time: " << time << endl;
+        if(time>=DEBUG_TIME) cout << "Time: " << time << endl;
         lastMeltedCnt=0;
         while(!toMelt.empty()){
             //일단 여기서 부터 문제가 있다. 
             pair<int,int> meltPoint = toMelt.front();
             toMelt.pop();
-            //cout << '(' << meltPoint.first << ',' << meltPoint.second << ") ";
-
+            if(time>=DEBUG_TIME) cout << '(' << meltPoint.first << ',' << meltPoint.second << ") ";
             grid[meltPoint.first][meltPoint.second]=0;
             lastMeltedCnt++;
         }
-        //cout << endl;
+        if(time>=DEBUG_TIME) cout << endl;
     }
 
     return 0;
