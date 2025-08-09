@@ -3,7 +3,7 @@
 #include <queue>
 #include <algorithm>
 using namespace std;
-#define MAX_TIME 200
+#define MAX_TIME 1000
 
 int N, M;
 int grid[200][200];
